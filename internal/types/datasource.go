@@ -22,6 +22,7 @@ type RequestDatasourceCreate struct {
 	DsAliCloudConfig models.DsAliCloudConfig   `json:"dsAliCloudConfig" `
 	AWSCloudWatch    models.AWSCloudWatch      `json:"awsCloudwatch" `
 	ClickHouseConfig models.DsClickHouseConfig `json:"clickhouseConfig"`
+	WebhookConfig    models.DsWebhookConfig    `json:"webhookConfig"`
 	Description      string                    `json:"description"`
 	KubeConfig       string                    `json:"kubeConfig"`
 	UpdateBy         string                    `json:"updateBy"`
@@ -40,6 +41,7 @@ type RequestDatasourceUpdate struct {
 	DsAliCloudConfig models.DsAliCloudConfig   `json:"dsAliCloudConfig" `
 	AWSCloudWatch    models.AWSCloudWatch      `json:"awsCloudwatch" `
 	ClickHouseConfig models.DsClickHouseConfig `json:"clickhouseConfig"`
+	WebhookConfig    models.DsWebhookConfig    `json:"webhookConfig"`
 	Description      string                    `json:"description"`
 	KubeConfig       string                    `json:"kubeConfig"`
 	UpdateBy         string                    `json:"updateBy"`

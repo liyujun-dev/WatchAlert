@@ -12,6 +12,7 @@ type AlertDataSource struct {
 	DsAliCloudConfig DsAliCloudConfig       `json:"dsAliCloudConfig" gorm:"dsAliCloudConfig;serializer:json"`
 	AWSCloudWatch    AWSCloudWatch          `json:"awsCloudwatch" gorm:"awsCloudwatch;serializer:json"`
 	ClickHouseConfig DsClickHouseConfig     `json:"clickhouseConfig" gorm:"clickhouseConfig;serializer:json"`
+	WebhookConfig    DsWebhookConfig        `json:"webhookConfig" gorm:"webhookConfig;serializer:json"`
 	Description      string                 `json:"description"`
 	KubeConfig       string                 `json:"kubeConfig"`
 	UpdateBy         string                 `json:"updateBy"`
@@ -50,6 +51,11 @@ type AWSCloudWatch struct {
 	Region    string `json:"region"`
 	AccessKey string `json:"accessKey"`
 	SecretKey string `json:"secretKey"`
+}
+
+type DsWebhookConfig struct {
+	FieldMapping      map[string]string `json:"fieldMapping"`      // 字段映射规则
+	FingerprintFields []string          `json:"fingerprintFields"` // 指纹计算字段
 }
 
 //type PromQueryRes struct {
