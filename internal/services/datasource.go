@@ -183,6 +183,8 @@ func (ds datasourceService) WithAddClientToProviderPools(datasource models.Alert
 		cli, err = provider.NewAWSCredentialCfg(datasource.AWSCloudWatch.Region, datasource.AWSCloudWatch.AccessKey, datasource.AWSCloudWatch.SecretKey, datasource.Labels)
 	case "ClickHouse":
 		cli, err = provider.NewClickHouseClient(ctx.Ctx, datasource)
+	case "Webhook":
+		cli, err = provider.NewWebhookClient(datasource)
 	}
 
 	if err != nil {

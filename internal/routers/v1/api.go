@@ -55,5 +55,11 @@ func Router(engine *gin.Engine) {
 			oidc.GET("callback", api.SystemController.CallBack)
 			oidc.GET("token", api.SystemController.CookieConvertToken)
 		}
+
+		// Webhook 接收端点（无需认证）
+		webhook := v1.Group("webhook")
+		{
+			webhook.POST("/:datasourceId", api.WebhookController.ReceiveWebhook)
+		}
 	}
 }
